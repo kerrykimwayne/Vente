@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lancelo-Shop</title>
+    <link rel="stylesheet" href="{% static 'pagne/css/styles.css' %}">
+    <script src="{% static 'pagne/js/index.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="charges">
+        <nav class="log"><img src="{% static 'pagne/img/logoChargement1.jpg' %}" alt=""></nav>
+        <nav class="chargement">
+            <div class="charge"><img src="{% static 'pagne/img/L.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/a.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/n.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/c.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/e.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/l1.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/o.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/s.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/h.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/o1.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/p.jpg' %}" alt=""></div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="compte">Lancelo-Shop contact: <a href="tel:97-03-56-22"> 97-03-56-22</a></div>
+        <div class="entete-header">
+            <div class="dropdown">
+                <div class="dropbtn">Categorie</div>
+                <div id="myDropdown" class="dropdown-contenu hid">
+                    {% for pagne in categorie %}
+                        <a href="{% url 'filtre' pagne.slug %}">{{pagne.Libele}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="logo">
+                <h1><span>Lancelo-Shop</h1>
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'acceuil' %}"><img src="{% static 'pagne/img/home-page_2144.png' %}"
+                            alt="acceuil" style="max-width: 25px;max-height: 25;"></a></li>
+                <li class="panier-nbr"><a href="http://wa.me/97035622"><img src="{% static 'pagne/img/whatsapp_3670051.png' %}"
+                            alt="acceuil" style="max-width: 25px;max-height: 25;"></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="nouveau">
+        <h1>NOUVEAUTE</h1>
+    </div>
+    <div class="section1">
+        <section class="article">
+            {% for pagne in produit %}
+            <div class="bordu">
+                <div class="img"><a href="{% url 'detail_produit' pagne.slug %}"><img src="{{pagne.image.url}}"
+                            alt="{{pagne.Libele}}" style="max-width: 200px;max-height: 200px;"></a></div>
+                <div class="libele-prix-panier">
+                    <div class="libele">
+                        <h1>{{pagne.Libele}}</h1>
+                    </div>
+                    <div class="prix-panier">
+                        <div class="prix">
+                            <h2>{{pagne.prix}} fcfa</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+    <section class="info-plus">
+        <div><h4>Visité aussi nos anciennes articles en cliquant sur le bouton</h4></div>
+        <div class="ancien"><a href="{% url 'panier' %}">ancienne article</a></div>
+    </section>
+</div>
+<footer class="pied">
+    <div class="contact">
+        <h1>Contact</h1>
+        <h2>Telephone:  <a href="tel:97-03-56-22">97035622</a></h2>
+        <h2>whatsapp: <a href="http://wa.me/97035622"><img src="{% static 'pagne/img/whatsapp_3670051.png' %}" alt="acceuil" style="max-width: 25px;max-height: 25;"></a></h2>
+    </div>
+    <div class="logo">
+        <img src="{% static 'pagne/img/logo1.jpg' %}" alt="acceuil" style="max-width: 250px;max-height:250px;" >
+    </div>
+</footer>
+</body>

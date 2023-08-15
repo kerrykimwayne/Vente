@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lancelo-Shop</title>
+    <link rel="stylesheet" href="{% static 'pagne/css/styles.css' %}">
+    <script src="{% static 'pagne/js/index.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="charges">
+        <nav class="log"><img src="{% static 'pagne/img/logoChargement1.jpg' %}" alt=""></nav>
+        <nav class="chargement">
+            <div class="charge"><img src="{% static 'pagne/img/L.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/a.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/n.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/c.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/e.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/l1.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/o.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/s.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/h.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/o1.jpg' %}" alt=""></div>
+            <div class="charge"><img src="{% static 'pagne/img/p.jpg' %}" alt=""></div>
+        </nav>
+    </div>
+
+    <header>
+        <div class="compte">Lancelo-Shop  contact: <a href="tel:97-03-56-22"> 97-03-56-22</a></div>
+        <div class="entete-header">
+            <div><a href="{% url 'acceuil' %}"><img src="{% static 'pagne/img/home-page_2144.png' %}"
+                alt="acceuil" style="max-width: 25px;max-height: 25;"></a></div>
+            <div><a href="{% url 'prod_anc' %}" style="color: aliceblue;padding:16px;background-color: black;">Tout les pagnes   </a></div>
+            <div class="logo">
+                <h1><span>Lancelo-Shop</h1>
+            </div>
+        </div>
+    </header>
+   <div class="det_pro">
+    <div class="img"><img src="{{detail_prod.image.url}}" alt="{{detail_prod.Libele}}" style="max-width: 400px;max-height: 400px;"></div>
+    <div class="inf">
+        <h2 class="libele">{{detail_prod.Libele}}</h2>
+        <h2 class="lib">{{detail_prod.prix}} fcfa</h2>
+        <a href="http://wa.me/97035622"><img src="{% static 'pagne/img/whatsapp_3670051.png' %}"
+            alt="acceuil" style="max-width: 25px;max-height: 25;"></a>
+    </div>
+   </div>
+</html>
